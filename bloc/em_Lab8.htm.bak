@@ -1,0 +1,955 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Simsun;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri",sans-serif;}
+h2
+	{mso-style-link:"标题 2 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:18.0pt;
+	font-family:宋体;
+	font-weight:bold;}
+h3
+	{mso-style-link:"标题 3 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:13.5pt;
+	font-family:宋体;
+	font-weight:bold;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	font-size:10.5pt;
+	font-family:"Calibri",sans-serif;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-link:"标题 2";
+	font-family:宋体;
+	font-weight:bold;}
+span.3Char
+	{mso-style-name:"标题 3 Char";
+	mso-style-link:"标题 3";
+	font-family:宋体;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-US
+style='font-size:18.0pt;font-family:"Simsun",serif;color:black'>Assignment 108:
+Lab 8</span></b><b><span style='font-size:18.0pt;font-family:宋体;color:black'>：网络</span></b><b><span
+lang=EN-US style='font-size:18.0pt;font-family:"Simsun",serif;color:black'>LED</span></b><b><span
+style='font-size:18.0pt;font-family:宋体;color:black'>矩阵显示器</span></b></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-US
+style='font-size:11.0pt;font-family:"Simsun",serif;color:black'>3130102113 </span><span
+style='font-size:11.0pt;font-family:宋体;color:black'>钱立辉</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体;color:black'>这个实验的目的是掌握</span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>Linux</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>网络程序和多线程程序的编写，实现一个网络访问的</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>LED</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>矩阵显</span><span
+style='font-size:12.0pt;font-family:"Simsun",serif;color:black'> </span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>示器。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体;color:black'>实验目的</span></b></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='color:black;text-align:left'><span
+     style='font-size:12.0pt;font-family:宋体'>复习</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>socket</span><span
+     style='font-size:12.0pt;font-family:宋体'>编程（网络原理课）；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span
+     style='font-size:12.0pt;font-family:宋体'>实现一个网络访问的</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>LED</span><span
+     style='font-size:12.0pt;font-family:宋体'>矩阵显示器。</span></li>
+</ol>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体;color:black'>实验器材</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:13.5pt;font-family:宋体;color:black'>硬件</span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>Linux</span><span
+     style='font-size:12.0pt;font-family:宋体'>实验板卡一块；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>5V/1A</span><span
+     style='font-size:12.0pt;font-family:宋体'>电源一个；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>microUSB</span><span
+     style='font-size:12.0pt;font-family:宋体'>线一根；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span
+     style='font-size:12.0pt;font-family:宋体'>面包板一块；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>8x8 LED</span><span
+     style='font-size:12.0pt;font-family:宋体'>矩阵一块；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>74HC595</span><span
+     style='font-size:12.0pt;font-family:宋体'>两个；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>360Ω 1/8W</span><span
+     style='font-size:12.0pt;font-family:宋体'>电阻</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>8</span><span
+     style='font-size:12.0pt;font-family:宋体'>颗；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span
+     style='font-size:12.0pt;font-family:宋体'>面包线若干。</span></li>
+</ul>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体;color:black'>以下为自备（可选）器材：</span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>PC</span><span
+     style='font-size:12.0pt;font-family:宋体'>（</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>Windows/Mac OS/Linux</span><span
+     style='font-size:12.0pt;font-family:宋体'>）一台；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>USB-TTL</span><span
+     style='font-size:12.0pt;font-family:宋体'>串口线一根（</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>FT232RL</span><span
+     style='font-size:12.0pt;font-family:宋体'>芯片或</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Simsun",serif'>PL2303</span><span
+     style='font-size:12.0pt;font-family:宋体'>芯片）；</span></li>
+ <li class=MsoNormal style='color:black;text-align:left'><span
+     style='font-size:12.0pt;font-family:宋体'>以太网线一根（可能还需要路由器等）。</span></li>
+</ul>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:13.5pt;font-family:宋体;color:black'>软件</span></b></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:black;text-align:left'><span
+     style='font-size:12.0pt;font-family:宋体'>编译软件。</span></li>
+</ul>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span
+style='font-size:18.0pt;font-family:宋体;color:black'>实验步骤</span></b></p>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Simsun",serif;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:12.0pt;font-family:宋体;color:black'>设计外部设备方案，画连线示意图；</span></b></p>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Simsun",serif;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:12.0pt;font-family:宋体;color:black'>在面包板上连线，完成外部电路；</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:宋体;color:black'>这次实验的连线图和上次一致：</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-family:"Simsun",serif;color:black'><img width=445 height=294
+id="图片 1" src="em_Lab8/image001.png" alt=无标题></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:150%'><span
+style='line-height:150%;font-family:宋体;color:black'>具体连线拍照效果可见后文的结果展示。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Simsun",serif;color:black'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:12.0pt;font-family:宋体;color:black'>编写</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>Linux</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>应用程序，能通过第七次实验的设备驱动程序控制</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>LED</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>矩阵显示字符串，每个字符停留</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>500ms</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>；</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体;color:black'>启动</span><span lang=EN-US style='font-size:
+12.0pt;font-family:"Simsun",serif;color:black'>led</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>显示屏的方法和上次一致，只是上次在终端直接使用</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>echo</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>输出，这次试用</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>write</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>函数。运行之前需要安装内核模块。并且使用</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>root</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>模式。</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='background:#E7E6E6;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;string.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;unistd.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;sys/types.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;sys/stat.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;fcntl.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>int main(){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>int
+  matrix;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt'><span
+  lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>char
+  str[10]=”123456”;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  matrix = open(&quot;/dev/matrix&quot;, O_WRONLY);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  if (matrix &lt; 0){&nbsp;&nbsp; //open failed</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  return(-1);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  write(Matrix, str, strlen(str));</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  return 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>}</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Simsun",serif;color:black'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:12.0pt;font-family:宋体;color:black'>编写</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>Linux</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>应用程序，能通过</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>TCP</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>接受一个连接，将发来的文字在</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>LED</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>矩阵上流动显示出来；</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体;color:black'>编写</span><span lang=EN-US style='font-size:
+12.0pt;font-family:"Simsun",serif;color:black'>socket</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>程序，和之前计算机网络课程做的实验类似。由于需要支持多个终端同时登陆，这里需要使用多线程，来防止一个终端连接后</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>recv</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>命令的阻塞。函数中首先开始监听是否有客户端连接，一旦有客户端连入，就新开启一个线程用于监听输入。代码如下：</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='background:#E7E6E6;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;stdio.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;stdlib.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;string.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;unistd.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;sys/types.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;sys/stat.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;fcntl.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;netinet/in.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;arpa/inet.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#include
+  &lt;sys/socket.h&gt;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>int Matrix;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>int server;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#define PORT
+  8080</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#define ADDR
+  &quot;0.0.0.0&quot;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#define QUEUE
+  20</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>#define
+  BUFF_SIZE 2048</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>void*
+  onServerRecv(void* data){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  int conn = *(int*)data;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  while (1){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  char receiveBuf[BUFF_SIZE];</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int count;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  memset(receiveBuf, 0, sizeof(receiveBuf));</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  count = recv(conn, receiveBuf, sizeof(receiveBuf), 0);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  if (count == 0){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  close(conn);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  break;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Receiver: %s&quot;,receiveBuf);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  write(Matrix, receiveBuf, count);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  pthread_exit(NULL);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  return NULL;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>}</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>int main(){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  // open matrix</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  Matrix = open(&quot;/dev/matrix&quot;, O_WRONLY);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  if (Matrix &lt; 0){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Open matrix failed.\n&quot;);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  exit(1);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  // start server</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  int server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  struct sockaddr_in serverAddr;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  serverAddr.sin_family = AF_INET;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  serverAddr.sin_addr.s_addr = inet_addr(ADDR);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  serverAddr.sin_port = htons(PORT);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  // bind</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  if (bind(server, (struct sockaddr*)&amp;serverAddr, sizeof(serverAddr)) ==
+  -1){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Bind failed %s:%d\n&quot;, ADDR, PORT);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  exit(1);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;
+  if (listen(server, QUEUE) == -1){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Listen failed.\n&quot;);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  exit(1);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  printf(&quot;Server running at %s:%d\n&quot;, ADDR, PORT);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  while (1){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  pthread_t thread;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  struct sockaddr_in clientAddr;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  socklen_t length = sizeof(clientAddr);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int conn = accept(server, (struct sockaddr*)&amp;clientAddr, &amp;length);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  if (conn &lt; 0){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Connect failed.&quot;);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  exit(1);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;A new connection from %s:%d\n&quot;,
+  inet_ntoa(clientAddr.sin_addr), clientAddr.sin_port);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  int temp = pthread_create(&amp;thread, NULL, onServerRecv, &amp;conn);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  if (temp &lt; 0){</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  printf(&quot;Create thread failed.\n&quot;);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  exit(1);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  }</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  close(server);</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>&nbsp;&nbsp;&nbsp;
+  return 0;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>}</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体;color:black'>由于使用了线程库，编译的时候需要加上库选项：</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='background:#E7E6E6;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=553 valign=top style='width:414.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>gcc myserver.c
+  -lpthread</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='margin-left:18.0pt;text-align:left;
+text-indent:-18.0pt'><b><span lang=EN-US style='font-size:12.0pt;font-family:
+"Simsun",serif;color:black'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span style='font-size:12.0pt;font-family:宋体;color:black'>用</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>telnet</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>连接</span></b><b><span
+lang=EN-US style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>Linux</span></b><b><span
+style='font-size:12.0pt;font-family:宋体;color:black'>板卡，发送字符串来显示。</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体;color:black'>首先查看</span><span lang=EN-US
+style='font-size:12.0pt;font-family:"Simsun",serif;color:black'>telnet</span><span
+style='font-size:12.0pt;font-family:宋体;color:black'>是否可以正常执行：</span><span
+lang=EN-US><img width=554 height=103 id="图片 2" src="em_Lab8/image002.jpg"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US><img
+width=554 height=143 id="图片 3" src="em_Lab8/image003.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>由于放在一个路由器下，连接比较简单。连接成功，发送消息后，可以在</span><span
+lang=EN-US>led</span><span style='font-family:宋体'>显示屏上看到输出（这之前需要如</span><span
+lang=EN-US>lab7</span><span style='font-family:宋体'>一样安装内核模块）：</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=411 height=252
+src="em_Lab8/image004.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=395 height=289
+src="em_Lab8/image005.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=454 height=415
+src="em_Lab8/image006.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US><img width=313 height=276
+src="em_Lab8/image007.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>可以看到连续显示了</span><span
+lang=EN-US>1234</span><span style='font-family:宋体'>，实验成功。</span></p>
+
+</div>
+
+</body>
+
+</html>
