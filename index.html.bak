@@ -57,10 +57,6 @@
 			<p>注意这个函数是做一次SPI数据通信，要从TCL1543获得数据，需要调用这个函数两次：第一次给出地址，第二次获得数据。请指出其中的问题所在，并给出修改的建议。</p>
 			<p align=right><a href="bloc/em_hw14.htm">Read more...</a></p>
 
-			<h3>作业13</h3>
-			<p>根据课件中提示的GPIO.txt，编写一份内核中使用GPIO函数来操纵GPIO端口的编程说明</p>
-			<p align=right><a href="bloc/em_hw13.htm">Read more...</a></p>
-
 		<div id="title">
       </section>
 
