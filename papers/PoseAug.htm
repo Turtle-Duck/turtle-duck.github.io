@@ -1,13 +1,13 @@
 <html>
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta http-equiv=Content-Type content="text/html; charset=unicode">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <style>
 <!--
  /* Font Definitions */
  @font-face
-	{font-family:����;
+	{font-family:宋体;
 	panose-1:2 1 6 0 3 1 1 1 1 1;}
 @font-face
 	{font-family:"Cambria Math";
@@ -19,13 +19,13 @@
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;}
 @font-face
-	{font-family:"\@����";
+	{font-family:"\@宋体";
 	panose-1:2 1 6 0 3 1 1 1 1 1;}
 @font-face
-	{font-family:����;
+	{font-family:等线;
 	panose-1:2 1 6 0 3 1 1 1 1 1;}
 @font-face
-	{font-family:"\@����";
+	{font-family:"\@等线";
 	panose-1:2 1 6 0 3 1 1 1 1 1;}
  /* Style Definitions */
  p.MsoNormal, li.MsoNormal, div.MsoNormal
@@ -36,7 +36,7 @@
 	font-size:10.5pt;
 	font-family:"Calibri",sans-serif;}
 h1
-	{mso-style-link:"���� 1 Char";
+	{mso-style-link:"标题 1 Char";
 	margin-top:17.0pt;
 	margin-right:0cm;
 	margin-bottom:16.5pt;
@@ -48,7 +48,7 @@ h1
 	font-size:22.0pt;
 	font-family:"Calibri",sans-serif;}
 h2
-	{mso-style-link:"���� 2 Char";
+	{mso-style-link:"标题 2 Char";
 	margin-top:13.0pt;
 	margin-right:0cm;
 	margin-bottom:13.0pt;
@@ -60,12 +60,12 @@ h2
 	font-size:16.0pt;
 	font-family:"Calibri Light",sans-serif;}
 span.1Char
-	{mso-style-name:"���� 1 Char";
-	mso-style-link:"���� 1";
+	{mso-style-name:"标题 1 Char";
+	mso-style-link:"标题 1";
 	font-weight:bold;}
 span.2Char
-	{mso-style-name:"���� 2 Char";
-	mso-style-link:"���� 2";
+	{mso-style-name:"标题 2 Char";
+	mso-style-link:"标题 2";
 	font-family:"Calibri Light",sans-serif;
 	font-weight:bold;}
  /* Page Definitions */
@@ -91,52 +91,52 @@ introduces a novel pose augmentor that learns to adjust various geometry
 factors (e.g., posture, body size, view point and position) of a pose through
 differentiable operations.</span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=520 height=341 id="ͼƬ 1"
+<p class=MsoNormal><span lang=EN-US><img width=520 height=341 id="图片 1"
 src="PoseAug.files/image001.png"></span></p>
 
-<p class=MsoNormal><span style='font-family:����'>ʹ��������������ǿ��ʹ���б�����������ǿ����б�</span></p>
+<p class=MsoNormal><span style='font-family:等线'>使用网络做数据增强，使用判别器对数据增强结果判别</span></p>
 
-<p class=MsoNormal><span style='font-family:����'>Ԥ��Ŀ�꣺</span></p>
+<p class=MsoNormal><span style='font-family:等线'>预测目标：</span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=332 height=49 id="ͼƬ 2"
+<p class=MsoNormal><span lang=EN-US><img width=332 height=49 id="图片 2"
 src="PoseAug.files/image002.png"></span></p>
 
-<p class=MsoNormal><span style='font-family:����'>������ǿ�Ż�Ŀ�꣺</span></p>
+<p class=MsoNormal><span style='font-family:等线'>数据增强优化目标：</span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=260 height=63 id="ͼƬ 3"
+<p class=MsoNormal><span lang=EN-US><img width=260 height=63 id="图片 3"
 src="PoseAug.files/image003.png"></span></p>
 
-<h2><span style='font-family:����'>��ʧ</span></h2>
+<h2><span style='font-family:宋体'>损失</span></h2>
 
-<p class=MsoNormal><span style='font-family:����'>Ԥ��ģ�飺</span></p>
+<p class=MsoNormal><span style='font-family:等线'>预测模块：</span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=188 height=53 id="ͼƬ 4"
+<p class=MsoNormal><span lang=EN-US><img width=188 height=53 id="图片 4"
 src="PoseAug.files/image004.png"></span></p>
 
-<p class=MsoNormal><span style='font-family:����'>������ģ�飺</span></p>
+<p class=MsoNormal><span style='font-family:等线'>数据增模块：</span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=388 height=53 id="ͼƬ 5"
+<p class=MsoNormal><span lang=EN-US><img width=388 height=53 id="图片 5"
 src="PoseAug.files/image005.png"></span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=515 height=291 id="ͼƬ 6"
+<p class=MsoNormal><span lang=EN-US><img width=515 height=291 id="图片 6"
 src="PoseAug.files/image006.png"></span></p>
 
-<p class=MsoNormal><span style='font-family:����'>�б���ģ�飺</span></p>
+<p class=MsoNormal><span style='font-family:等线'>判别器模块：</span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=515 height=199 id="ͼƬ 7"
+<p class=MsoNormal><span lang=EN-US><img width=515 height=199 id="图片 7"
 src="PoseAug.files/image007.png"></span></p>
 
-<p class=MsoNormal><span style='font-family:����'>������ǿ��������ά���ϵģ�</span></p>
+<p class=MsoNormal><span style='font-family:等线'>数据增强是在向量维度上的：</span></p>
 
-<p class=MsoNormal><span lang=EN-US><img width=536 height=164 id="ͼƬ 8"
+<p class=MsoNormal><span lang=EN-US><img width=536 height=164 id="图片 8"
 src="PoseAug.files/image008.png"></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='font-family:"Times New Roman",serif'>.</span><span
-lang=EN-US> <img width=519 height=668 id="ͼƬ 9" src="PoseAug.files/image009.png"></span></p>
+lang=EN-US> <img width=519 height=668 id="图片 9" src="PoseAug.files/image009.png"></span></p>
 
-<h2><span style='font-family:����'>�ֿ��б���</span></h2>
+<h2><span style='font-family:宋体'>分块判别器</span></h2>
 
-<p class=MsoNormal><span lang=EN-US><img width=484 height=209 id="ͼƬ 10"
+<p class=MsoNormal><span lang=EN-US><img width=484 height=209 id="图片 10"
 src="PoseAug.files/image010.png"></span></p>
 
 </div>
